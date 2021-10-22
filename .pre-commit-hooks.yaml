@@ -1,0 +1,14 @@
+- id: prepare-commit-msg
+  name: prepare commit msg, redmine
+  description: prepend commit msg. with redmine ticket no. extracted from the branch name
+  entry: pre_commit_hooks/prepare-commit-msg
+  language: script
+  stages: [prepare-commit-msg]
+  # always_run seems not to be necessary for commit_msgs.
+  # always_run: true
+- id: commit-msg
+  name: verify commit msg, redmine
+  description: verifies the presence of a redmine ticket no. in the commit msg header
+  entry: pre_commit_hooks/commit-msg
+  language: script
+  stages: [commit-msg]
